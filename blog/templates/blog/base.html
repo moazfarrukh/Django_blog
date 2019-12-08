@@ -6,21 +6,21 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <meta charset="UTF-8">
-    <title>MOAZ BLOG</title>
+    <title>Moaz's Blog</title>
 </head>
 <body>
-<body>
-    <div class="page-header">
-        <h1><a href="/">Moaz Blogs</a></h1>
-    </div>
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
+<div class="page-header">
+    {% if user.is_authenticated %}
+    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    {% endif %} <h1><a href="/">Moaz's Blog</a></h1>
+</div>
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
             {% block content %}
             {% endblock %}
-            </div>
         </div>
     </div>
-</body>
+</div>
 </body>
 </html>
